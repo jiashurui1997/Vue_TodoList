@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="">
+    <head lang="">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Untitled Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+    <div id="app">Hello World11123445
+        <span>{{vm2}}</span>
+        <button :disabled="false" @click.once="clickEvent"> Clickable Element</button>
+
+    </div>
+    <div id="dyId" >{{vm2}}</div>
+    </body>
+    <script type="application/javascript">
+        console.log();
+        let rawHtml = "<span style='color:#008000'>This is Raw Html</span>";
+        let data = {
+          "name":"Jia",
+          "age":23,
+            "json":{
+              "j1":1, "j2":2
+            },
+            "rawHtml":rawHtml,
+            "dynamicId":"dyId"
+        };
+
+        let vm2 = new Vue({
+            el:"#app",
+            data:{
+                "vm2":"This is bind with VM2"
+            },
+            beforeCreate:function (){
+                console.log("vue2 object is creating");
+            },
+            created:function () {
+                console.log("vue2 object is created");
+            },
+            methods:{
+                clickEvent:function (){
+                    console.log("Hello World");
+                }
+            }
+        });
+    </script>
+</html>
