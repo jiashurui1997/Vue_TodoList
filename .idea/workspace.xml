@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fba444c-e3bf-4415-bf2b-7d7d6887b57c" name="Default Changelist" comment="" />
+    <list default="true" id="4fba444c-e3bf-4415-bf2b-7d7d6887b57c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TestVue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +34,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/first.html" root0="FORCE_HIGHLIGHTING" />
@@ -43,7 +67,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.TodoList.html">
+  <component name="RunManager" selected="JavaScript Debug.TestVue.html">
+    <configuration name="TestVue.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vue_TodoList/TestVue.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="TodoList.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vue/TodoList.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -55,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.TestVue.html" />
         <item itemvalue="JavaScript Debug.TodoList.html" />
         <item itemvalue="JavaScript Debug.first.html" />
         <item itemvalue="JavaScript Debug.bilibili.html" />
@@ -72,11 +100,23 @@
       <workItem from="1598933645058" duration="501000" />
       <workItem from="1598934206130" duration="4360000" />
       <workItem from="1598941963705" duration="15393000" />
+      <workItem from="1599891919129" duration="1161000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="104" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598942079071">
