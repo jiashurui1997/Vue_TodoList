@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./css/test.css">
+
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
-<body id = "app">
-{{msg}}
-This is {{msg1}}
+
+<body>
+  <!-- <div class="el-container" id="app">
+
+      <div class="el-header">Header</div>
+      <aside class="el-aside">Asided</aside>
+      <div class="el-main">Main</div>
+
+
+      <div class="el-footer">Footer</div> 
+
+  </div>-->
+
+  <el-container id="app">
+    <el-header>H</el-header>
+
+    <el-container>
+    <el-main>M1233121453256435</el-main>
+    <el-footer>F</el-footer>
+  </el-container>
+  </el-container>
+
+
 </body>
+
+
+
+</html>
 
 <script>
   var vm = new Vue({
-    el:'#app',
+    el: '#app',
     data: {
-      msg:'Hello World'
+      msg: 'Hello World'
     },
-    computed:{
-      msg1 :function (){
+    computed: {
+      msg1: function () {
         console.log('computed attr' + this.msg);
       }
     }
   });
 
 </script>
-</html>

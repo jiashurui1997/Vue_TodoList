@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <title>TodoList</title>
@@ -7,63 +8,69 @@
   <style type="text/css">
     @import url("./css/Main.css");
   </style>
+
+
 </head>
+
 <body>
+  <div id="app">
+    <aside>
+      <div class="accountInfo">
+        <div id="icon">ICON</div>
+        <div id="search">S</div>
+      </div>
+      <hr>
+      <ul v-for="(folderObj,index) in folderTrees" :key="index">
+        <h3><li @click="toggleFolder(folderObj)">{{folderObj.title}}</li></h3>
 
-<div id="side-menu">
-123
-</div>
-<div id="app">
-  <h1>编程练习之10天内写一个TodoList</h1>
+        <div v-show="folderObj.showChild">
+        <div id="addList" @click="addList(folderObj)">新建清单</div>
+        <ul v-for="(listObj,index) in folderObj.content" :key="index">
+            <li @click="toggleList(listObj)">{{listObj.listName}}</li>
+        </ul>
+      </div>
+      </ul>
 
-  <ul id= "todoList">
-    <h2>未完成 ({{todoList.length}}件)</h2>
-    <li v-for="(todo,index) in todoList" :key="index">
-      <label>
-        <input type="checkbox" @click.prevent="complete(index)"> {{todo.title}}
-      </label>
-      {{todo.content}} {{todo.updateTime}} INDEX:{{index}}
-    </li>
-  </ul>
-  <hr>
-  <ul id="finishList">
-    <h2>已完成({{finishedTodo.length}}件)</h2>
-    <li v-for="(todo,index) in finishedTodo" class="finished" :key="index">
-      <input value="on" value="true" type="checkbox" @click.prevent="recover(index);return false;" checked> {{todo.title}} {{todo.content}} {{todo.updateTime}} INDEX:{{index}}
-    </li>
-  </ul>
-</div>
+      <div id="asideBar">
+        <div id="addFolder"@click="addFolder()">新建组</div>
+      </div>
+
+    </aside>
+    <div id = "container" v-if="currentList!=null">
+      <header>
+        <h1>{{currentList.listName}}</h1>
+      </header>
+
+      <div id= "listBody" >
+      <h2>未完成 ({{unFinishedList.length}}件)</h2>
+      <ul id="todoList">
+        <li v-for="(todo,index) in unFinishedList" :key="index">
+            <input type="checkbox" @click.prevent="complete(todo)">
+            <div class="itemFrame">{{todo.content}}</div>
+        </li>
+      </ul>
+
+      <hr>
+
+      <h2>已完成({{FinishedList.length}}件)</h2>
+      <ul id="finishList">
+        <li v-for="(todo,index) in FinishedList" class="finished" :key="index">
+          <input value="on" value="true" type="checkbox" @click.prevent="uncomplete(todo);return false;" checked>
+          <div class="itemFrame">{{todo.content}}</div>
+        </li>
+      </ul>
+      </div>
+
+      <footer>
+        <form>
+          <input type="text" id="inputText" v-model="inputText" placeholder="添加任务" onclick="this.placeholder=''" οnblur="this.placeholder='添加任务'" autocomplete="off">
+          <input type="submit" value="提交" @click.prevent="addTodoItem()">          
+        </form>
+      </footer>
+    </div>
+  </div>
+
+
 </body>
-<script>
-  //get From Server
-  let todoList= [
-    {title:"未完成1",content:"is a",updateTime:new Date().toLocaleDateString()},
-    {title:"未完成2",content:"is b",updateTime:new Date().toLocaleDateString()},
-    {title:"未完成3",content:"is c",updateTime:new Date().toLocaleDateString()}
-  ];
-
-  let finishedTodo =[
-    {title:"完成1",content:"is a",updateTime:new Date().toLocaleDateString()},
-    {title:"完成2",content:"is b",updateTime:new Date().toLocaleDateString()},
-    {title:"完成3",content:"is c",updateTime:new Date().toLocaleDateString()}
-  ];
-
-  new Vue({
-    el:"#app",
-    data: {
-      todoList:todoList,
-      finishedTodo:finishedTodo
-    },
-    methods:{
-      complete:function (index){
-        let updatedTodo=todoList.splice(index,1)[0];
-        finishedTodo.unshift(updatedTodo);
-      },
-      recover:function (index){
-        let updatedTodo=finishedTodo.splice(index,1)[0];
-        todoList.push(updatedTodo);
-      }
-    }
-  });
-</script>
+<script src="./js/script.js"></script>
 </html>
